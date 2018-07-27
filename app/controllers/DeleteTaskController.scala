@@ -1,0 +1,24 @@
+package controllers
+
+import javax.inject._
+
+import models.Task
+import play.api.i18n.{ I18nSupport, Messages }
+import play.api.mvc._
+import scalikejdbc.AutoSession
+
+@Singleton
+class DeleteMessageController @Inject()(components: ControllerComponents)
+  extends AbstractController(components) with I18nSupport {
+
+  def delete(id: Long): Action[AnyContent] = Action { implicit request =>
+    implicit val session = AutoSession
+    val result           = Task.deleteById(id)
+    if (result > 0) {
+      Redirect(routes.GetTasksController.index())
+    } else {
+      InternalServerError(Messages("DeleteTaskError"))
+    }
+  }
+
+}
