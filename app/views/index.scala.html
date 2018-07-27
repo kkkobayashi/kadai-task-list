@@ -9,6 +9,7 @@
         <tr>
             <th>id</th>
             <th>@Messages("Task")</th>
+            <th>@Messages("Status")</th>
         </tr>
         </thead>
         <tbody>
@@ -16,6 +17,7 @@
         <tr>
             <td><a href="@routes.GetTaskController.index(task.id.get)">@task.id.get</a></td>
             <td>@task.content</td>
+            <td>@task.status</td>
         </tr>
         }
         </tbody>

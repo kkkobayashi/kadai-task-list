@@ -6,7 +6,7 @@ import java.time.ZonedDateTime
 import scalikejdbc._, jsr310._
 import skinny.orm._
 
-case class Task(id: Option[Long], content: String, createAt: ZonedDateTime, updateAt: ZonedDateTime)
+case class Task(id: Option[Long], content: String,status: Option[String], createAt: ZonedDateTime, updateAt: ZonedDateTime)
 
 object Task extends SkinnyCRUDMapper[Task] {
 
@@ -21,6 +21,7 @@ object Task extends SkinnyCRUDMapper[Task] {
   // Taskインスタンスをカラムと紐づけるヘルパー
   private def toNamedValues(record: Task): Seq[(Symbol,Any)] = Seq(
     'content -> record.content,
+    'status -> record.status,
     'createAt -> record.createAt,
     'updateAt -> record.updateAt
   )
