@@ -8,7 +8,7 @@ import play.api.mvc._
 import scalikejdbc.AutoSession
 
 @Singleton
-class DeleteMessageController @Inject()(components: ControllerComponents)
+class DeleteTaskController @Inject()(components: ControllerComponents)
   extends AbstractController(components) with I18nSupport {
 
   def delete(id: Long): Action[AnyContent] = Action { implicit request =>

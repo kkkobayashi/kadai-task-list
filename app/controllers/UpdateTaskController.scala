@@ -10,7 +10,7 @@ import play.api.mvc._
 import scalikejdbc.AutoSession
 
 @Singleton
-class UpdateMessageController @Inject()(components: ControllerComponents)
+class UpdateTaskController @Inject()(components: ControllerComponents)
   extends AbstractController(components)
     with I18nSupport
     with TaskControllerSupport {

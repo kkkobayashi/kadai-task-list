@@ -10,7 +10,7 @@ import scalikejdbc.AutoSession
 
 
 @Singleton
-class CreateMessageController @Inject()(components: ControllerComponents)
+class CreateTaskController @Inject()(components: ControllerComponents)
   extends AbstractController(components)
     with I18nSupport
     with TaskControllerSupport {

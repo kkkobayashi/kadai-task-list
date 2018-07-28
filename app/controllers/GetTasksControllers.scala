@@ -6,7 +6,7 @@ import play.api.i18n.I18nSupport
 import play.api.mvc._
 
 @Singleton
-class GetMessagesController @Inject()(components: ControllerComponents)
+class GetTasksController @Inject()(components: ControllerComponents)
   extends AbstractController(components) with I18nSupport {
 
   def index: Action[AnyContent] = Action { implicit request =>
